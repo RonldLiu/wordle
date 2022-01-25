@@ -5,6 +5,16 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 public class w{
+    public static void show(){
+        System.out.print("\f");
+        System.out.println(w); //uncomment to show target word
+        for(int i = 0; i < 6; i++){
+            for(int j = 0; j < 5; j++){
+                System.out.print("" + grid[i][j][0] + grid[i][j][1] + " ");
+            }
+            System.out.println();
+        }
+    }
     static String w;
     static char grid[][][];
     public static void main(String args[]){
@@ -49,13 +59,13 @@ public class w{
                     if(g.charAt(i) == w.charAt(i)){
                         grid[t][i][1] = ' ';
                     }else{
+                        grid[t][i][1] = 'x';
                         for(int j = 0; j < 5; j++){
-                            if(g.charAt(i) == w.charAt(i)){
+                            if(g.charAt(i) == w.charAt(j)){
                                 grid[t][i][1] = '|';
-                                break;
+                                continue;
                             }
                         }
-                        grid[t][i][1] = 'x';
                     }
                 }
                 if(g.equals(w)){
@@ -72,16 +82,6 @@ public class w{
             System.out.println("You win! The word was " + w);
         }else{
             System.out.println("You lose! The word was " + w);
-        }
-    }
-    public static void show(){
-        System.out.print("\f");
-        //System.out.println(w); //uncomment to show target word
-        for(int i = 0; i < 6; i++){
-            for(int j = 0; j < 5; j++){
-                System.out.print("" + grid[i][j][0] + grid[i][j][1] + " ");
-            }
-            System.out.println();
         }
     }
 }
