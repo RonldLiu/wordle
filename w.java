@@ -3,11 +3,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.lang.Math;
-
 public class w{
     public static void show(){
         System.out.print("\f");
-        System.out.println(w); //uncomment to show target word
+        //System.out.println(w); //uncomment to show target word //uncomment to show target word //uncomment to show target word //uncomment to show target word //uncomment to show target word //uncomment to show target word //uncomment to show target word
         for(int i = 0; i < 6; i++){
             for(int j = 0; j < 5; j++){
                 System.out.print("" + grid[i][j][0] + grid[i][j][1] + " ");
@@ -18,7 +17,7 @@ public class w{
     static String w;
     static char grid[][][];
     public static void main(String args[]){
-        ArrayList<String> wl = new ArrayList<>(3000);
+        ArrayList<String> wl = new ArrayList<>(3264);
         try{
             Scanner sf = new Scanner(new File("words.txt"));
             while(sf.hasNext()){
@@ -31,7 +30,7 @@ public class w{
             System.out.println(e);
         }
         w = wl.get((int)(Math.random()*wl.size()));
-       
+        
         grid = new char[6][5][2];
         for(int i = 0; i < 6; i++){
             for(int j = 0; j < 5; j++){
